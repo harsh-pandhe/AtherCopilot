@@ -49,4 +49,5 @@ export * from './non-blocking-login';
 export * from './errors';
 export * from './error-emitter';
 export * from './auth';
+export * from './clerk-firebase-sync';
 
