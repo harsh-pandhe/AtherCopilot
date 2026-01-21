@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAuth } from '@clerk/nextjs/server';
-import { initializeApp, getApps, cert } from 'firebase-admin/app';
+import { initializeApp, getApps, cert, type ServiceAccount } from 'firebase-admin/app';
 import { getAuth as getAdminAuth } from 'firebase-admin/auth';
 
 /**
@@ -27,20 +27,33 @@ function validateFirebaseEnvVars(): string | null {
   return null;
 }
 
+/**
+ * Formats the private key to handle various storage formats.
+ * Vercel and different environments may store the key differently.
+ */
+function formatPrivateKey(key: string): string {
+  // If the key is wrapped in quotes, remove them
+  let formatted = key.trim();
+  if ((formatted.startsWith('"') && formatted.endsWith('"')) ||
+      (formatted.startsWith("'") && formatted.endsWith("'"))) {
+    formatted = formatted.slice(1, -1);
+  }
+  
+  // Replace literal \n with actual newlines
+  formatted = formatted.replace(/\\n/g, '\n');
+  
+  return formatted;
+}
+
 // Initialize Firebase Admin SDK (only once)
 function getFirebaseAdmin() {
   if (getApps().length === 0) {
-    const privateKey = process.env.FIREBASE_PRIVATE_KEY;
-    
-    // Handle different formats of the private key
-    // Vercel may store it with literal \n or actual newlines
-    const formattedPrivateKey = privateKey?.includes('\\n')
-      ? privateKey.replace(/\\n/g, '\n')
-      : privateKey;
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY!;
+    const formattedPrivateKey = formatPrivateKey(privateKey);
 
-    const serviceAccount = {
-      projectId: process.env.FIREBASE_PROJECT_ID,
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    const serviceAccount: ServiceAccount = {
+      projectId: process.env.FIREBASE_PROJECT_ID!,
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL!,
       privateKey: formattedPrivateKey,
     };
 
