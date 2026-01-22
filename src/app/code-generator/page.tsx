@@ -82,41 +82,102 @@ export default function CodeGeneratorPage() {
 
     if (!SpeechRecognition) {
       toast({
-        title: 'Browser Not Supported',
+        title: 'Voice Input Not Supported',
         description:
-          'Your browser does not support the Web Speech API. Please try Chrome or Edge.',
+          'Your browser does not support voice input. Please use text input or try Chrome, Edge, or Safari.',
         variant: 'destructive',
       });
       return;
     }
 
     const recognition = new SpeechRecognition();
-    recognition.continuous = true;
+    recognition.continuous = false; // Changed to false for better control
     recognition.interimResults = true;
+    recognition.lang = 'en-US'; // Set language
+
+    recognition.onstart = () => {
+      setIsListening(true);
+      toast({
+        title: 'Listening...',
+        description: 'Speak your code requirements clearly.',
+      });
+    };
 
     recognition.onresult = (event: any) => {
       let finalTranscript = '';
+      let interimTranscript = '';
+
       for (let i = event.resultIndex; i < event.results.length; ++i) {
+        const transcript = event.results[i][0].transcript;
         if (event.results[i].isFinal) {
-          finalTranscript += event.results[i][0].transcript;
+          finalTranscript += transcript;
+        } else {
+          interimTranscript += transcript;
         }
       }
-      setTranscript((prev) => prev + finalTranscript);
+
+      if (finalTranscript) {
+        setTranscript((prev) => prev + finalTranscript);
+      }
     };
 
-    recognition.onend = () => setIsListening(false);
+    recognition.onend = () => {
+      setIsListening(false);
+      toast({
+        title: 'Voice input stopped',
+        description: 'You can continue typing or start voice input again.',
+      });
+    };
+
+    recognition.onerror = (event: any) => {
+      setIsListening(false);
+      let errorMessage = 'Voice recognition error occurred.';
+
+      switch (event.error) {
+        case 'no-speech':
+          errorMessage = 'No speech was detected. Please try speaking again.';
+          break;
+        case 'audio-capture':
+          errorMessage = 'No microphone was found. Ensure that a microphone is installed.';
+          break;
+        case 'not-allowed':
+          errorMessage = 'Microphone permission denied. Please allow microphone access and try again.';
+          break;
+        case 'network':
+          errorMessage = 'Network error occurred. Please check your connection.';
+          break;
+        case 'service-not-allowed':
+          errorMessage = 'Speech recognition service not allowed.';
+          break;
+      }
+
+      toast({
+        title: 'Voice Recognition Error',
+        description: errorMessage,
+        variant: 'destructive',
+      });
+    };
 
     recognitionRef.current = recognition;
   }, [toast]);
 
-  const toggleListening = () => {
+  const toggleListening = async () => {
     if (isListening) {
       recognitionRef.current?.stop();
     } else {
-      setTranscript('');
-      recognitionRef.current?.start();
+      try {
+        // Request microphone permission first
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+        setTranscript('');
+        recognitionRef.current?.start();
+      } catch (error) {
+        toast({
+          title: 'Microphone Access Required',
+          description: 'Please allow microphone access to use voice input.',
+          variant: 'destructive',
+        });
+      }
     }
-    setIsListening(!isListening);
   };
 
   const handleGenerateCode = async () => {

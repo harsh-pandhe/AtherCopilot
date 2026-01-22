@@ -199,7 +199,7 @@ export default function ChatPage() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const { toast } = useToast();
 
-  const { firestore } = useFirebase();
+  const { firestore, user: firebaseUser, isUserLoading: isFirebaseAuthLoading } = useFirebase();
   const { isLoaded, isSignedIn, user } = useClerkUser();
 
   const currentMode = modes.find(m => m.id === mode) || modes[0];
@@ -210,16 +210,19 @@ export default function ChatPage() {
     // The UI below will show a SignIn button when not signed in.
   }, [isLoaded, isSignedIn]);
 
+  // Only query Firestore when Firebase auth is ready (user is signed in to Firebase)
+  const isFirebaseReady = !isFirebaseAuthLoading && firebaseUser !== null;
+
   /* 📂 Sessions */
   const sessionsQuery = useMemoFirebase(
     () =>
-      user
+      user && isFirebaseReady
         ? query(
           collection(firestore, `users/${user?.id}/sessions`),
           orderBy('startTime', 'desc')
         )
         : null,
-    [firestore, user]
+    [firestore, user, isFirebaseReady]
   );
 
   const { data: sessions } = useCollection(sessionsQuery);
@@ -242,7 +245,7 @@ export default function ChatPage() {
   /* 💬 Messages */
   const messagesQuery = useMemoFirebase(
     () =>
-      user && activeSessionId
+      user && activeSessionId && isFirebaseReady
         ? query(
           collection(
             firestore,
@@ -251,7 +254,7 @@ export default function ChatPage() {
           orderBy('createdAt')
         )
         : null,
-    [firestore, user, activeSessionId]
+    [firestore, user, activeSessionId, isFirebaseReady]
   );
 
   const { data: firestoreMessages } = useCollection(messagesQuery);
@@ -299,6 +302,7 @@ export default function ChatPage() {
       sessionName: `Chat ${(sessions?.length ?? 0) + 1}`,
       isStarred: false,
       isArchived: false,
+      userId: user.id,
     });
     if (docRef) {
       setActiveSessionId(docRef.id);
@@ -354,6 +358,7 @@ export default function ChatPage() {
       content,
       isUserMessage: true,
       createdAt: serverTimestamp(),
+      userId: user.id,
     });
 
     try {
@@ -382,6 +387,7 @@ export default function ChatPage() {
         content: result.response,
         isUserMessage: false,
         createdAt: serverTimestamp(),
+        userId: user.id,
       });
     } catch (err: any) {
       console.error(err);
@@ -712,7 +718,7 @@ export default function ChatPage() {
                         )}
                       >
                         <m.icon className="h-3.5 w-3.5" />
-                        <span className="hidden lg:inline">{m.label}</span>
+                        <span className="hidden sm:inline lg:inline">{m.label}</span>
                       </button>
                     ))}
                   </div>

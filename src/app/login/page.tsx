@@ -308,6 +308,10 @@ export default function LoginPage() {
                 variant="outline"
                 size="lg"
                 className="h-12 px-8 text-base font-medium border-border/60 hover:border-accent/40 hover:bg-accent/5"
+                onClick={() => {
+                  // Open demo in new tab or show modal
+                  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+                }}
               >
                 <Globe className="h-4 w-4 mr-2" />
                 Watch Demo
