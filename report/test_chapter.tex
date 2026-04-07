@@ -1,0 +1,16 @@
+\documentclass[12pt,a4paper,oneside]{report}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\vspace*{\fill}\bfseries\fontsize{36}{40}\selectfont\centering}
+  {\MakeUppercase{\chaptername}\ \thechapter}
+  {1em}
+  {\MakeUppercase}
+  [\vspace*{\fill}\clearpage]
+
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+
+\begin{document}
+\chapter{Introduction}
+This is the content of the introduction. It should be on the next page.
+\end{document}

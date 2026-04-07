@@ -1,0 +1,48 @@
+\chapter{Requirement Analysis}
+
+Before the implementation of Aether Co-Pilot, a thorough analysis of the requirements was conducted to ensure the feasibility and performance of the system. This chapter details the functional, non-functional, hardware, and software prerequisites.
+
+\section{Functional Requirement}
+Functional requirements denote the behaviors the system must exhibit to serve its user base effectively. The primary functional modules include:
+\begin{enumerate}
+    \item \textbf{user registration}: The system must allow new users to register and create an account securely via email or OAuth integration.
+    \item \textbf{user login}: Authenticated access mechanism to verify identity tokens upon each session load, ensuring private workspace retrieval.
+    \item \textbf{profile management}: Ability for the user to manage their account details, view usage data, and update their personal configurations.
+    \item \textbf{online offline status}: The application should gracefully inform the user if their network connection is dropped and sync pending operations when re-connected.
+    \item \textbf{Real time status}: Continuous, real-time database synchronization reflecting new chat messages across separate active devices.
+    \item \textbf{Admin Module}: A dedicated module allowing administrators to monitor platform health, active sessions, and global rate limits.
+\end{enumerate}
+
+\section{Non Functional Requirement}
+Non-functional requirements specify the criteria used to judge the operation of the system rather than specific behaviors.
+\begin{enumerate}
+    \item \textbf{performance}: AI inference times must be minimized and streaming responses should begin within 1.5 seconds of complex prompts.
+    \item \textbf{security}: The system must enforce strict zero-leak data ownership rules via Firestore Rules ensuring isolated conversations.
+    \item \textbf{reliability}: The application requires 99.9\% uptime guarantees achieved through serverless deployments on the Vercel Edge network.
+    \item \textbf{usability}: The interface must be fully accessible (WCAG compliant) featuring high contrast themes, keyboard navigation, and aria-labels.
+    \item \textbf{scalability}: Capable of dynamic horizontal scaling to handle peak traffic load, particularly active during enterprise or examination scenarios.
+    \item \textbf{maitainability}: The codebase will follow strict TypeScript typing schemas (via Zod) and modular feature-branch workflows to ease future upgrades.
+\end{enumerate}
+
+\section{Hardware Requirement}
+Hardware specifications ensure fluid execution of the development environment and the client-side experience.
+\begin{itemize}
+    \item \textbf{Development Processor}: Intel Core i5 or equivalent modern architecture.
+    \item \textbf{Development RAM}: 16 GB minimum to handle simultaneous local dev servers and IDE footprints.
+    \item \textbf{End-User Device}: Any desktop or tablet with an updated browser.
+    \item \textbf{End-User RAM}: 4 GB minimum for smooth Web App performance.
+    \item \textbf{Peripherals}: A functioning microphone is required for voice-activated code generation features.
+\end{itemize}
+
+\section{Software Requirement}
+Aether Co-Pilot utilizes a defined stack to ensure robust operations.
+\begin{itemize}
+    \item \textbf{Operating System}: Windows, macOS, or Linux (Ubuntu) environments.
+    \item \textbf{Core Framework}: Next.js 15 (React 19).
+    \item \textbf{Language}: TypeScript 5.x.
+    \item \textbf{AI Orchestration}: Google Genkit with Gemini 2.0 Flash models.
+    \item \textbf{Database \& Identity}: Google Firebase (Firestore) for no-SQL storage and Clerk for identity verification.
+    \item \textbf{UI / Styling}: Tailwind CSS 3.x and Radix UI components.
+\end{itemize}
+
+\newpage

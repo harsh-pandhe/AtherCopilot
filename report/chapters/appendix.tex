@@ -1,0 +1,33 @@
+\chapter{Appendix: Index of Technical Modules}
+
+This appendix provides a comprehensive index of the key source code modules implemented in the Aether Co-Pilot system.
+
+\section{Core AI Flows (src/ai/flows)}
+\begin{itemize}
+    \item \textbf{intelligent-chat-memory.ts}: Handles conversational persistence and mode-based prompting.
+    \item \textbf{voice-activated-code-generation.ts}: Orchestrates the transformation of speech to TypeScript artifacts.
+    \item \textbf{ai-based-study-support.ts}: Implements the Knowledge Navigator™ logic for document analysis.
+    \item \textbf{task-automation.ts}: Managed the conversion of natural language to shell scripts and executable tasks.
+\end{itemize}
+
+\section{Security and Infrastructure}
+\begin{itemize}
+    \item \textbf{firestore.rules}: The foundational security layer enforcing cryptographic user isolation.
+    \item \textbf{clerk-firebase-sync.tsx}: The React hook bridging the Clerk identity provider with the Firebase database.
+    \item \textbf{firebase-token/route.ts}: The server-side API route for issuing custom Firebase tokens.
+\end{itemize}
+
+\section{Frontend and Design System}
+\begin{itemize}
+    \item \textbf{src/app/dashboard/page.tsx}: The main entry point for the authenticated user experience.
+    \item \textbf{src/components/ui/}: A directory containing the shadcn/ui visual tokens and layout primitives.
+    \item \textbf{tailwind.config.ts}: The configuration file defining the "Aether" brand color palette and motion settings.
+\end{itemize}
+
+\section{Verification Scripts}
+\begin{itemize}
+    \item \textbf{tests/security-audit.json}: A log of simulated penetration test results.
+    \item \textbf{tests/latency-benchmarks.csv}: Raw data used for the performance analysis in Chapter 10.
+\end{itemize}
+
+\newpage

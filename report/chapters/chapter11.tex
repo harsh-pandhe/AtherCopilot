@@ -1,0 +1,111 @@
+\chapter{Project Cost Estimation}
+
+Cost estimation is an essential aspect of project management that forecasts the financial resources required to execute a project from inception to delivery. The estimation process evaluates hardware, software, manpower, and operational expenditures to formulate a realistic budget. Aether Co-Pilot inherently drives towards an extremely cost-effective model by outsourcing heavy computational needs to serverless execution environments and relying heavily on open-source frameworks for initial development. This chapter offers a rigorous breakdown of the estimated project costs and a structured feasibility study to ensure sustained viability.
+
+\section{Objectives of Project Cost Estimation}
+The process of cost estimation was guided by the following key objectives:
+\begin{enumerate}
+    \item \textbf{Budget Allocation}: To define the precise financial baseline required to secure initial academic or seed funding.
+    \item \textbf{Resource Optimization}: To ensure the most efficient allocation of both human and physical resources during the Agile development sprints.
+    \item \textbf{Risk Management}: To identify potential financial risks (such as varying API inference costs based on user load) early in the lifecycle.
+    \item \textbf{Feasibility Assessment}: To quantitatively prove whether the project will yield sustainable long-term value against its projected maintenance costs.
+    \item \textbf{Scaling Forecast}: To extrapolate costs accurately when the platform transitions from an academic prototype to a commercial Tier-2 deployment.
+    \item \textbf{Vendor Selection}: To perform cost-benefit analysis between different third-party API providers (e.g., comparing Google Gemini vs. OpenAI GPT models).
+    \item \textbf{Investment Justification}: To provide stakeholders with transparent metrics that validate the ROI derived from the developers' increased productivity.
+    \item \textbf{Pricing Strategy}: To aid in formulating eventual SAAS subscription models if the product is commercialized for enterprise institutions.
+\end{enumerate}
+
+\section{Hardware Cost}
+The hardware requirements for developing and running Aether Co-pilot were mitigated by leveraging existing infrastructure.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{6cm}|p{3cm}|c|}
+\hline
+\textbf{Sr. No} & \textbf{Hardware Description} & \textbf{Purpose} & \textbf{Estimated Cost} \\ \hline
+1 & High-Performance Development Laptops & For running Next.js compiler and emulators locally. & Rs. 0 (Pre-owned) \\ \hline
+2 & Cloud Hosting Server (Proxy) & For testing Edge network rendering. & Rs. 0 (Free Tier) \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total Hardware Cost}} & \textbf{Rs. 0} \\ \hline
+\end{tabular}
+\caption{Estimated Hardware Costs}
+\end{table}
+
+\section{Software Cost}
+The project maximized the usage of freely available, open-source software and heavily discounted student-tier API accesses.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{4cm}|p{5cm}|c|}
+\hline
+\textbf{Sr. No} & \textbf{Software/API} & \textbf{Usage Type} & \textbf{Estimated Cost/Yr} \\ \hline
+1 & IDE (Visual Studio Code) & Source code editing & Rs. 0 \\ \hline
+2 & Next.js 15 \& React 19 & Core frontend framework & Rs. 0 \\ \hline
+3 & Google Genkit \& Firebase & Backend Orchestration & Rs. 0 (Spark Plan) \\ \hline
+4 & Google Gemini API & LLM Inference (Free tier limits) & Rs. 0 \\ \hline
+5 & Clerk Auth & Identity management & Rs. 0 (Dev Tier) \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total Software Cost}} & \textbf{Rs. 0} \\ \hline
+\end{tabular}
+\caption{Estimated Software Costs}
+\end{table}
+
+\section{Development Manpower Cost}
+The costs associated with engineering hours represent the most significant internal metric, calculated over a 16-week period.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|p{3cm}|c|}
+\hline
+\textbf{Role} & \textbf{Headcount} & \textbf{Hours/Week} & \textbf{Total Hours} \\ \hline
+Frontend Developer & 1 & 20 hours & 320 hours \\ \hline
+Backend/AI Engineer & 1 & 25 hours & 400 hours \\ \hline
+QA/Testing Engineer & 1 & 15 hours & 240 hours \\ \hline
+Project Manager & 1 & 10 hours & 160 hours \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total Team Effort}} & \textbf{1120 hours} \\ \hline
+\end{tabular}
+\caption{Estimated Development Manpower Cost Allocation}
+\end{table}
+
+\section{Documentation Cost}
+The process of capturing the architecture, design models, and test logs requires resource allocation.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{5cm}|c|}
+\hline
+\textbf{Item} & \textbf{Description} & \textbf{Estimated Cost} \\ \hline
+Software Licenses & LaTeX distributions and Diagramming software (Figma/Draw.io) & Rs. 0 \\ \hline
+Printing & Physical binding of Final Reports (x4 copies) & Rs. 1,500 \\ \hline
+\multicolumn{2}{|r|}{\textbf{Total Documentation Cost}} & \textbf{Rs. 1,500} \\ \hline
+\end{tabular}
+\caption{Estimated Documentation Costs}
+\end{table}
+
+\section{Operational Cost}
+Post-deployment operational costs rely dynamically on user interactions hitting the serverless functions.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{5cm}|c|}
+\hline
+\textbf{Service} & \textbf{Usage Threshold} & \textbf{Estimated Cost/Month} \\ \hline
+Vercel Edge Rendering & Up to 100GB bandwidth & Rs. 0 \\ \hline
+Firestore (Database) & 50K Reads/Day, 20K Writes/Day & Rs. 0 \\ \hline
+Gemini AI Inference & 15 Request Per Minute (RPM) & Rs. 0 \\ \hline
+\multicolumn{2}{|r|}{\textbf{Total Operational Cost (Under Tier 1)}} & \textbf{Rs. 0} \\ \hline
+\end{tabular}
+\caption{Estimated Operational Costs}
+\end{table}
+
+\section{Total Estimated Cost}
+The financial footprint of the Aether Co-Pilot project in its current academic form is demonstrably minimal due to strategic infrastructural choices.
+\begin{itemize}
+    \item \textbf{Academic Exemption}: Because the project utilizes open-source resources and developer-tier thresholds provided by modern software-as-a-service (SaaS) companies, direct monetary expenditure is negligible.
+    \item \textbf{Time Equity}: The true "cost" lies within the sweat equity represented by the 1,120 aggregated hours of development manpower.
+    \item \textbf{Physical Printing}: The only required capital outlay is situated within the documentation phase covering the final binding and presentation material formatting required by the institution.
+\end{itemize}
+Combining the explicitly monetized attributes, the total direct estimated cost sits safely within Rs. 1,500.
+
+\section{Feasibility Study}
+The feasibility of scaling Aether Co-pilot was measured across three distinct axes:
+\begin{enumerate}
+    \item \textbf{Technical Feasibility}: The employment of Genkit and Next.js ensures that the codebase can evolve and integrate newer multimodal structures without fundamental architecture rewrites. The architecture scales automatically on serverless providers.
+    \item \textbf{Operational Feasibility}: The minimalist, "glassmorphism" interface paired with accessible command structures guarantees that non-technical users and domain experts can navigate the cognitive workspaces without extensive onboarding.
+    \item \textbf{Economic Feasibility}: Supported by the aforementioned minimal Total Estimated Cost, the financial gateway to maintaining this product long-term rests uniquely at \$0 until user counts break heavily into the thousands, proving high commercial profitability potential.
+\end{enumerate}
+
+\newpage

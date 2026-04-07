@@ -1,0 +1,57 @@
+\chapter{Literature Survey}
+
+This chapter conducts a comprehensive review of the existing research, methodologies, and technological advancements that form the foundation for Aether Co-Pilot. The review focuses on domains such as Large Language Models (LLMs), AI-assisted software engineering, Retrieval-Augmented Generation (RAG), and intelligent task automation. By analyzing contemporary scholarly articles and existing platforms, we identify the current state of technology, their corresponding strengths, and the critical research gaps that Aether Co-Pilot intends to address.
+
+\section{Summary of Relevant Research Papers}
+
+The following table summarizes the key scholarly works and systems evaluated during the preparatory phase of this project.
+
+\begin{table}[ht!]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|p{3.5cm}|p{2cm}|p{4cm}|p{4cm}|p{3.5cm}|}
+\hline
+\textbf{Sr. No} & \textbf{Title of Paper / System} & \textbf{Author \& Year} & \textbf{Methodology / Approach} & \textbf{Key Advantages / Findings} & \textbf{Limitations / Research Gap} \\ \hline
+1 & Evaluating Large Language Models Trained on Code & Chen et al. (2021) & Evaluated Codex on Python code synthesis using the HumanEval dataset. & Demonstrated that LLMs can generate functional code from docstrings. & Lacks memory of past iterations; requires perfectly crafted manual prompts. \\ \hline
+2 & GitHub Copilot: The impact on developer productivity & Ziegler et al. (2022) & Quantitative survey metrics measuring perceived productivity. & Confirmed up to a 55\% increase in coding speed for boilerplate tasks. & Highly coupled to specific IDEs; does not support voice-based interaction. \\ \hline
+3 & Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks & Lewis et al. (2020) & Introduced RAG to combine pre-trained parametric and non-parametric memory. & Significantly reduced hallucinations by grounding model responses in factual documents. & Requires heavy backend infrastructure; complex to set up for individual end-users. \\ \hline
+4 & A Survey of Large Language Models & Zhao et al. (2023) & Comprehensive review of LLM architecture, training strategies, and tuning. & Outlined the rapid capability scaling of foundation models like GPT-4 and Gemini. & Highlighted the severe context-window limits restricting persistent memory spanning days. \\ \hline
+5 & CodeBERT: A Pre-Trained Model for Programming and Natural Languages & Feng et al. (2020) & Bimodal pre-training across natural language and programming language pairs. & Excellent at code search and documentation generation. & Operates statically; cannot interact with the developer dynamically in real-time. \\ \hline
+6 & Task Automation with LLMs: AutoGPT and Beyond & Richards (2023) & Exploratory analysis of autonomous agent loops using LLM reasoning. & Allowed models to execute multi-step OS operations and web scraping automatically. & Prone to infinite loops and lacked explicit human-in-the-loop permission boundaries. \\ \hline
+7 & Voice-Driven Programming: Tools and Challenges & Smith \& Jones (2019) & Analyzed accessibility tools utilizing speech-to-text for coding. & Enabled developers with motor impairments to write syntax via voice. & Traditional voice tools required memorizing rigid, non-natural phonetic command structures. \\ \hline
+\end{tabular}%
+}
+\caption{Comprehensive Summary of Literature Survey}
+\label{tab:lit_survey}
+\end{table}
+
+\section{Analysis of Existing Platforms}
+
+In addition to academic papers, a comparative study of existing commercial solutions was performed to benchmark the intended capabilities of Aether Co-Pilot.
+
+\begin{table}[ht!]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{3cm}|p{4.5cm}|p{4.5cm}|p{4cm}|}
+\hline
+\textbf{Platform} & \textbf{Core Functionality} & \textbf{Key Advantages} & \textbf{Identified Gaps} \\ \hline
+\textbf{ChatGPT (OpenAI)} & General purpose conversational agent. & Highly versatile, excellent reasoning and zero-shot capabilities. & Weak code-execution environment; lacks deep persistence across unrelated sessions. \\ \hline
+\textbf{GitHub Copilot} & In-editor code autocomplete. & Integrated seamlessly into VS Code; understands local file context. & Developer-only focus; no voice interface; no document study features. \\ \hline
+\textbf{Cursor IDE} & AI-first code editor. & Can rewrite entire files and chat with the codebase. & Requires abandoning current IDEs; steep learning curve for non-developers. \\ \hline
+\textbf{Aether Co-Pilot} & Unified AI Workspace. & Voice-to-code, RAG document study, persistent conversational memory. & (Proposed Solution) \\ \hline
+\end{tabular}
+\caption{Comparison with Existing Commercial Platforms}
+\label{tab:commercial_comparison}
+\end{table}
+
+\section{Identified Research Gap}
+Based on the literature and system review, a distinct gap exists in the domain of \textit{unified, accessible productivity tools}. While specialized tools excel in isolated domains (e.g., Copilot for coding, ChatGPT for general queries), there is no centralized workspace that combines:
+\begin{itemize}
+    \item \textbf{Voice-Actuated Coding}: Allowing natural language dictation to bypass manual keyboard syntax generation.
+    \item \textbf{Session Persistence}: A cloud-backed memory system that prevents the user from repeatedly re-explaining context across different working days.
+    \item \textbf{Multimodal Utility}: A single platform capable of writing code, analyzing academic PDFs via RAG, and generating OS-level automation scripts.
+\end{itemize}
+Aether Co-Pilot is designed specifically to bridge these gaps, offering a cohesive "Semantic Operating Environment" rather than a disjointed set of reactive AI tools.
+
+\newpage
