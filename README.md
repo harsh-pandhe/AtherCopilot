@@ -1,6 +1,12 @@
-# Aether Co-Pilot
-
-An AI-powered productivity workspace built with Next.js, Firebase, and Google's Genkit AI framework.
+<div align="center">
+  <img src="public/banner.png" alt="Aether Co-Pilot Banner" width="100%">
+  
+  # Aether Co-Pilot
+  
+  **Empowering Productivity with Generative AI**
+  
+  An AI-powered productivity workspace built with Next.js, Firebase, and Google's Genkit AI framework.
+</div>
 
 ![Next.js](https://img.shields.io/badge/Next.js-15.5-black?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)

@@ -48,3 +48,14 @@ firestore-debug.log
 
 # clerk configuration (can include secrets)
 /.clerk/
+
+# report and pdfs
+/report/
+*.pdf
+report/scripts/
+check_pages.py
+generate_student_pdfs.py
+merge_complete.py
+merge_multiple.py
+merge_pdfs.py
+update_index.py
