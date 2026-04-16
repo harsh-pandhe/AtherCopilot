@@ -1,0 +1,17 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
+  "functions": {
+    "src/app/api/parse-pdf/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/fetch-url/route.ts": {
+      "maxDuration": 15
+    },
+    "src/app/api/firebase-token/route.ts": {
+      "maxDuration": 10
+    }
+  }
+}

@@ -1,6 +1,5 @@
-'use server';
-
 import { NextRequest, NextResponse } from 'next/server';
+import pdfParse from 'pdf-parse';
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,13 +14,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'File must be a PDF' }, { status: 400 });
     }
 
-    if (file.size > 10 * 1024 * 1024) { // 10MB limit
+    if (file.size > 10 * 1024 * 1024) {
       return NextResponse.json({ error: 'File size must be less than 10MB' }, { status: 400 });
     }
 
-    // For now, return placeholder content
-    // In a real implementation, you would use a PDF parsing library like 'pdf-parse' or 'pdf2pic'
-    const content = `PDF Content from: ${file.name}\n\nThis is placeholder content extracted from the PDF. In a production implementation, you would use a library like 'pdf-parse' to extract text content from PDF files.\n\nFile size: ${(file.size / 1024 / 1024).toFixed(2)} MB\nFile type: ${file.type}`;
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const data = await pdfParse(buffer);
+
+    const content = data.text.trim() || `[No extractable text found in ${file.name}]`;
 
     return NextResponse.json({ content });
   } catch (error) {
