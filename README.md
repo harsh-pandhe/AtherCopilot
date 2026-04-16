@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="public/banner.png" alt="Aether Co-Pilot" width="100%" />
+  <img src="public/banner.png" alt="Ather Co-Pilot" width="100%" />
 
-  <h1>🚀 Aether Co-Pilot</h1>
+  <h1>🚀 Ather Co-Pilot</h1>
 
   <p><strong>Your AI-powered productivity workspace</strong></p>
   <p>One unified platform for intelligent chat, code generation, knowledge analysis, and task automation.</p>
@@ -17,7 +17,7 @@
 
 ## ✨ Overview
 
-Aether Co-Pilot is a full-stack AI workspace that integrates cutting-edge AI capabilities with a modern, intuitive interface. Built with **Next.js 15**, **Google Gemini 2.5 Flash**, **Firebase Firestore**, and **Clerk Auth**, it provides four powerful AI-driven features in one cohesive platform.
+Ather Co-Pilot is a full-stack AI workspace that integrates cutting-edge AI capabilities with a modern, intuitive interface. Built with **Next.js 15**, **Google Gemini 2.5 Flash**, **Firebase Firestore**, and **Clerk Auth**, it provides four powerful AI-driven features in one cohesive platform.
 
 ### Core Features
 

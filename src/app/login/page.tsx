@@ -223,7 +223,7 @@ export default function LoginPage() {
                   <Sparkles className="h-5 w-5 text-white" />
                 </div>
               </div>
-              <span className="text-xl font-semibold tracking-tight">Aether</span>
+              <span className="text-xl font-semibold tracking-tight">Ather</span>
             </div>
             <div className="flex items-center gap-4">
               <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">
@@ -383,7 +383,7 @@ export default function LoginPage() {
         <footer className="w-full px-6 lg:px-12 py-6 border-t border-border/40">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Aether Co-Pilot. Built for developers.
+              © {new Date().getFullYear()} Ather Co-Pilot. Built for developers.
             </p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">

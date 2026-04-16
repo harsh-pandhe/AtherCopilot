@@ -1,6 +1,6 @@
-# Installation Guide: Aether Co-Pilot
+# Installation Guide: Ather Co-Pilot
 
-This document outlines the steps required to set up and run Aether Co-Pilot on your local development environment.
+This document outlines the steps required to set up and run Ather Co-Pilot on your local development environment.
 
 ## Prerequisites
 

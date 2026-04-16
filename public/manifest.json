@@ -1,6 +1,6 @@
 {
-  "name": "Aether Co-Pilot",
-  "short_name": "Aether",
+  "name": "Ather Co-Pilot",
+  "short_name": "Ather",
   "description": "An AI-powered desktop assistant to improve productivity, learning, and security on a PC.",
   "start_url": "/",
   "display": "standalone",

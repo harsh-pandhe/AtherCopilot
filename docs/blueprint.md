@@ -1,4 +1,4 @@
-# **App Name**: Aether Co-Pilot
+# **App Name**: Ather Co-Pilot
 
 ## Core Features:
 

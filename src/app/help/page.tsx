@@ -40,12 +40,12 @@ const faqs = [
         category: 'getting-started',
         questions: [
             {
-                q: 'How do I get started with Aether Co-Pilot?',
+                q: 'How do I get started with Ather Co-Pilot?',
                 a: 'Simply sign in with your account, and you\'ll be taken to the dashboard. From there, you can access all features including AI Chat, Code Generator, Study Support, and Task Automation.',
             },
             {
-                q: 'What AI model powers Aether Co-Pilot?',
-                a: 'Aether Co-Pilot is powered by advanced language models through Google\'s Genkit framework, providing state-of-the-art natural language understanding and generation capabilities.',
+                q: 'What AI model powers Ather Co-Pilot?',
+                a: 'Ather Co-Pilot is powered by advanced language models through Google\'s Genkit framework, providing state-of-the-art natural language understanding and generation capabilities.',
             },
             {
                 q: 'Is my data secure?',
@@ -106,9 +106,9 @@ const quickLinks = [
 ];
 
 const contactMethods = [
-    { icon: Mail, label: 'Email Support', value: 'support@aether-copilot.com', href: 'mailto:support@aether-copilot.com' },
+    { icon: Mail, label: 'Email Support', value: 'support@ather-copilot.com', href: 'mailto:support@ather-copilot.com' },
     { icon: Github, label: 'GitHub Issues', value: 'Report a bug', href: '#' },
-    { icon: Twitter, label: 'Twitter', value: '@AetherCoPilot', href: '#' },
+    { icon: Twitter, label: 'Twitter', value: '@AtherCoPilot', href: '#' },
 ];
 
 export default function HelpPage() {

@@ -85,7 +85,7 @@ export default function DashboardPage() {
             </h1>
 
             <p className="mt-3 text-muted-foreground max-w-2xl">
-              Ask Aether Co-Pilot anything — deep research, code generation, knowledge lookups, or run automations.
+              Ask Ather Co-Pilot anything — deep research, code generation, knowledge lookups, or run automations.
             </p>
 
             {/* Search bar */}
@@ -100,7 +100,7 @@ export default function DashboardPage() {
 
                 <input
                   className="flex-1 bg-transparent outline-none text-lg"
-                  placeholder="Ask Aether Co-Pilot"
+                  placeholder="Ask Ather Co-Pilot"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                       const val = (e.target as HTMLInputElement).value;

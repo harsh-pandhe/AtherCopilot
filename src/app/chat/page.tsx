@@ -78,7 +78,7 @@ function TypingIndicator() {
         <span className="w-2 h-2 bg-accent/60 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
         <span className="w-2 h-2 bg-accent/60 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
       </div>
-      <span className="text-xs text-muted-foreground ml-2">Aether is thinking...</span>
+      <span className="text-xs text-muted-foreground ml-2">Ather is thinking...</span>
     </div>
   );
 }
@@ -120,7 +120,7 @@ function ChatMessage({ message, isLast }: { message: Message; isLast: boolean })
       <div className="flex-1 space-y-1 overflow-hidden">
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium">
-            {isUser ? 'You' : 'Aether'}
+            {isUser ? 'You' : 'Ather'}
           </span>
           <span className="text-xs text-muted-foreground">
             just now
@@ -164,7 +164,7 @@ function EmptyState({ onSuggestionClick }: { onSuggestionClick: (suggestion: str
       </div>
       <h2 className="text-2xl font-semibold mb-2">How can I help you today?</h2>
       <p className="text-muted-foreground max-w-md mb-8">
-        I'm Aether, your AI co-pilot. I can help with coding, answer questions,
+        I'm Ather, your AI co-pilot. I can help with coding, answer questions,
         automate tasks, and remember our conversations.
       </p>
 
@@ -667,7 +667,7 @@ export default function ChatPage() {
                 <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center mb-6 mx-auto shadow-lg shadow-accent/20">
                   <Sparkles className="h-8 w-8 text-white" />
                 </div>
-                <h2 className="text-2xl font-semibold mb-2">Welcome to Aether Chat</h2>
+                <h2 className="text-2xl font-semibold mb-2">Welcome to Ather Chat</h2>
                 <p className="text-muted-foreground mb-6">Sign in to access your AI-powered conversations with persistent memory.</p>
                 <SignInButton mode="modal">
                   <Button className="bg-gradient-to-r from-accent to-purple-500 hover:opacity-90">
@@ -697,7 +697,7 @@ export default function ChatPage() {
                       <currentMode.icon className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <h1 className="text-sm font-semibold">Aether Co-pilot</h1>
+                      <h1 className="text-sm font-semibold">Ather Co-pilot</h1>
                       <p className="text-xs text-muted-foreground">{currentMode.label} Mode</p>
                     </div>
                   </div>
@@ -772,7 +772,7 @@ export default function ChatPage() {
                           handleSendMessage(e);
                         }
                       }}
-                      placeholder="Message Aether..."
+                      placeholder="Message Ather..."
                       rows={1}
                       className="flex-1 resize-none bg-transparent px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none min-h-[40px] max-h-[200px]"
                       style={{ height: 'auto' }}
@@ -802,7 +802,7 @@ export default function ChatPage() {
                     </div>
                   </div>
                   <p className="text-xs text-center text-muted-foreground mt-2">
-                    Aether can make mistakes. Consider checking important information.
+                    Ather can make mistakes. Consider checking important information.
                   </p>
                 </form>
               </div>

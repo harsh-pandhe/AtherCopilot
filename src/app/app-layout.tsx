@@ -74,7 +74,7 @@ export default function AppLayout({
               <div className="absolute -inset-1 bg-gradient-to-br from-accent to-purple-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition-opacity" />
             </div>
             <div>
-              <h1 className="text-lg font-bold tracking-tight group-hover:text-accent transition-colors">Aether</h1>
+              <h1 className="text-lg font-bold tracking-tight group-hover:text-accent transition-colors">Ather</h1>
               <p className="text-[11px] text-muted-foreground">AI Co-Pilot</p>
             </div>
           </Link>
@@ -225,7 +225,7 @@ export default function AppLayout({
             <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center">
               <Sparkles className="h-4 w-4 text-white" />
             </div>
-            <span className="text-base font-bold">Aether</span>
+            <span className="text-base font-bold">Ather</span>
           </div>
           <div className="flex items-center gap-1">
             {navItems.slice(0, 3).map((item) => {

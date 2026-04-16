@@ -1,6 +1,6 @@
-# Contributing to Aether Co-Pilot
+# Contributing to Ather Co-Pilot
 
-Thank you for your interest in contributing to **Aether Co-Pilot**! We welcome contributions of all kinds, from bug fixes and feature enhancements to documentation and design improvements.
+Thank you for your interest in contributing to **Ather Co-Pilot**! We welcome contributions of all kinds, from bug fixes and feature enhancements to documentation and design improvements.
 
 ## How to Contribute
 

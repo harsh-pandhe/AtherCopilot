@@ -17,7 +17,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Aether Co-Pilot',
+  title: 'Ather Co-Pilot',
   description:
     'An AI-powered desktop assistant to improve productivity, learning, and security on a PC.',
 };
